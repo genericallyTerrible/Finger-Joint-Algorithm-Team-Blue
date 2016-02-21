@@ -1,0 +1,5 @@
+c:\users\zach\documents\visual studio 2015\Projects\Slacker\Slacker\bin\Debug\Slacker.dll
+c:\users\zach\documents\visual studio 2015\Projects\Slacker\Slacker\bin\Debug\Slacker.pdb
+c:\users\zach\documents\visual studio 2015\Projects\Slacker\Slacker\obj\Debug\Slacker.csprojResolveAssemblyReference.cache
+c:\users\zach\documents\visual studio 2015\Projects\Slacker\Slacker\obj\Debug\Slacker.dll
+c:\users\zach\documents\visual studio 2015\Projects\Slacker\Slacker\obj\Debug\Slacker.pdb

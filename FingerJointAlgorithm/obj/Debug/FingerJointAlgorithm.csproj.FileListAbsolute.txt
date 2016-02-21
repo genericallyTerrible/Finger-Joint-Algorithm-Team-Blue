@@ -1,1 +1,8 @@
 D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\bin\Debug\FingerJointAlgorithm.exe.config
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\bin\Debug\FingerJointAlgorithm.exe
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\bin\Debug\FingerJointAlgorithm.pdb
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.csprojResolveAssemblyReference.cache
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.Properties.Resources.resources
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.csproj.GenerateResource.Cache
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.exe
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.pdb

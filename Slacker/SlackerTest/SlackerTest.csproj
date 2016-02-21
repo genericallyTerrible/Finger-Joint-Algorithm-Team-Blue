@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{ADC30E28-A2B0-48E6-A88D-9A409977C480}</ProjectGuid>
+    <ProjectGuid>{ADD40BE7-02B7-4278-AC32-3B9C8517A71E}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FingerJointAlgorithmTesting</RootNamespace>
-    <AssemblyName>FingerJointAlgorithmTesting</AssemblyName>
+    <RootNamespace>SlackerTest</RootNamespace>
+    <AssemblyName>SlackerTest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -45,21 +45,18 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
-          <Private>False</Private>
-        </Reference>
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="SlackerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="BreakpointTesting.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FingerJointAlgorithm\FingerJointAlgorithm.csproj">
-      <Project>{68aeb6c3-1398-4e3e-ad49-016412c9b0c2}</Project>
-      <Name>FingerJointAlgorithm</Name>
+    <ProjectReference Include="..\Slacker\Slacker.csproj">
+      <Project>{61c87119-2660-4c98-9eea-d812c54d1eb1}</Project>
+      <Name>Slacker</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

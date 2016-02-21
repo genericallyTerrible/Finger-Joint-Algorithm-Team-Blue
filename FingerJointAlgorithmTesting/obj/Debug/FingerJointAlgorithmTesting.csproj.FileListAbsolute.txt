@@ -1,0 +1,7 @@
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\obj\Debug\FingerJointAlgorithmTesting.csprojResolveAssemblyReference.cache
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\bin\Debug\FingerJointAlgorithmTesting.dll
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\bin\Debug\FingerJointAlgorithmTesting.pdb
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\bin\Debug\FingerJointAlgorithm.exe
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\bin\Debug\FingerJointAlgorithm.pdb
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\obj\Debug\FingerJointAlgorithmTesting.dll
+D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\obj\Debug\FingerJointAlgorithmTesting.pdb
