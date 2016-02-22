@@ -1,8 +1,0 @@
-c:\Users\Zach\documents\visual studio 2015\Projects\Slacker\SlackerTest\bin\Debug\SlackerTest.dll
-c:\Users\Zach\documents\visual studio 2015\Projects\Slacker\SlackerTest\bin\Debug\SlackerTest.pdb
-c:\Users\Zach\documents\visual studio 2015\Projects\Slacker\SlackerTest\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
-c:\Users\Zach\documents\visual studio 2015\Projects\Slacker\SlackerTest\bin\Debug\Slacker.dll
-c:\Users\Zach\documents\visual studio 2015\Projects\Slacker\SlackerTest\bin\Debug\Slacker.pdb
-c:\Users\Zach\documents\visual studio 2015\Projects\Slacker\SlackerTest\obj\Debug\SlackerTest.csprojResolveAssemblyReference.cache
-c:\Users\Zach\documents\visual studio 2015\Projects\Slacker\SlackerTest\obj\Debug\SlackerTest.dll
-c:\Users\Zach\documents\visual studio 2015\Projects\Slacker\SlackerTest\obj\Debug\SlackerTest.pdb

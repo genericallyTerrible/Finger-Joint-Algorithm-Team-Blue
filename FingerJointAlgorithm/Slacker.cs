@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Slacker
+namespace FingerJointAlgorithm
 {
     public class Slacker
     {
-        public static Double[] GetBreakPointsWithSlack1(Double[] breakPoints, Double slack)
+        public double[] GetBreakPointsWithSlack1(double[] breakPoints, double slack)
         {
-            Double[] newBreakPoints = new Double[breakPoints.Length];
+            double[] newBreakPoints = new double[breakPoints.Length];
             for (int i = 0; i < breakPoints.Length; i++)
             {
                 if (i % 2 == 0)
@@ -26,9 +26,9 @@ namespace Slacker
             }
             return newBreakPoints;
         }
-        public static Double[] GetBreakPointsWithSlack2(Double[] breakPoints, Double slack)
+        public double[] GetBreakPointsWithSlack2(double[] breakPoints, double slack)
         {
-            Double[] newBreakPoints = new Double[breakPoints.Length];
+            double[] newBreakPoints = new double[breakPoints.Length];
             for (int i = 0; i < breakPoints.Length; i++)
             {
                 if (i % 2 == 0)

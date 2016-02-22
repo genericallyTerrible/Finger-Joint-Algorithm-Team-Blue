@@ -9,11 +9,11 @@ namespace FingerJointAlgorithm
     //Assumes correct input
     public abstract class FindingBreakpoints
     {
-        public double this [int i]
+        public double[] breakpoints
         {
             get
             {
-                return _breakpoints[i];
+                return _breakpoints.ToArray();
             }
         }
         public List<double> _breakpoints = new List<double>();
