@@ -16,9 +16,9 @@ namespace FingerJointAlgorithm
         {
             InitializeComponent();
             /*
-            FindingBreakpoints test = new Case1(4, 0.5, 1);
+            FindingBreakpoints test = new Case3(4, 1);
             Console.WriteLine(test);
-             */
+            */
         }
     }
 }
