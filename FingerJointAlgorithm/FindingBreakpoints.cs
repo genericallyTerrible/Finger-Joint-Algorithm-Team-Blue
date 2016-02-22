@@ -16,32 +16,34 @@ namespace FingerJointAlgorithm
                 return _breakpoints.ToArray();
             }
         }
-        public List<double> _breakpoints = new List<double>();
-        public double _boardWidth;
-        public double _endPinWidth;
-        public double _interiorBoardWidth;
-        public double _interiorPinWidth;
-        public int _numInteriorAreas;
-
-        public void generateBreakpoints(){
-            int _numBreakPoints = (_numInteriorAreas / 2) + 1;
-            _breakpoints.Add(_endPinWidth);   
-            for (int i = 0; i <= _numBreakPoints; i++)
-            {
-                _breakpoints.Add(_endPinWidth + ((i + 1) * _interiorPinWidth));
-            }
-        }
 
         public override string ToString()
         {
             StringBuilder output = new StringBuilder();
             output.AppendLine("Count: " + _breakpoints.Count);
             output.Append("[");
-            for(int i = 0; i < _breakpoints.Count - 1; i++){
+            for (int i = 0; i < _breakpoints.Count - 1; i++)
+            {
                 output.Append(_breakpoints[i] + ", ");
             }
             output.Append(_breakpoints[_breakpoints.Count - 1] + "]");
             return output.ToString();
+        }
+
+        protected List<double> _breakpoints = new List<double>();
+        protected double _boardWidth;
+        protected double _endPinWidth;
+        protected double _interiorBoardWidth;
+        protected double _interiorPinWidth;
+        protected int _numInteriorAreas;
+
+        protected void generateBreakpoints(){
+            int _numBreakPoints = (_numInteriorAreas / 2) + 1;
+            _breakpoints.Add(_endPinWidth);   
+            for (int i = 0; i <= _numBreakPoints; i++)
+            {
+                _breakpoints.Add(_endPinWidth + ((i + 1) * _interiorPinWidth));
+            }
         }
     }
 
