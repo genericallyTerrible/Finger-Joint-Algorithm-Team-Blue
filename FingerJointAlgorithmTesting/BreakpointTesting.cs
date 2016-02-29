@@ -7,7 +7,7 @@ namespace FingerJointAlgorithmTesting
     [TestClass]
     public class BreakpointTesting
     {
-        FindingBreakpoints test;
+        Breakpoints testPoints;
 
         [TestMethod]
         public void BreakpointTestCase1()
@@ -18,17 +18,17 @@ namespace FingerJointAlgorithmTesting
             double Clearance = ((double)1 / 64);
             double EndPinWidth = 0.5;
             int NumInteriorPins = 1;
-            test = new Case1(BoardWidth, Clearance, EndPinWidth, NumInteriorPins);
+            testPoints = new Breakpoints(BoardWidth, Clearance, EndPinWidth, NumInteriorPins);
             
-            Assert.AreEqual(0, test.breakpoints[0]);
-            double testVal = (EndPinWidth + (0.25 *  Clearance));
-            Assert.AreEqual(testVal, test.breakpoints[1]);
-            for (int i = 1; i <= test.NumInteriorAreas; i++)
+            Assert.AreEqual(0, testPoints[0]);
+            double testVal = (EndPinWidth + (0.5 *  Clearance));
+            Assert.AreEqual(testVal, testPoints[1]);
+            for (int i = 1; i <= testPoints.NumInteriorAreas; i++)
             {
-                testVal += test.InteriorPinWidth;
-                Assert.AreEqual(testVal, test.breakpoints[i + 1]);
+                testVal += testPoints.InteriorPinWidth;
+                Assert.AreEqual(testVal, testPoints[i + 1]);
             }
-            Assert.AreEqual(4, test.breakpoints[5]);
+            Assert.AreEqual(4, testPoints[5]);
         }
 
         [TestMethod]
@@ -39,17 +39,17 @@ namespace FingerJointAlgorithmTesting
             double Clearance = ((double)1 / 64);
             double EndPinWidth = 0.5;
             double InteriorPinWidth = 1;
-            test = new Case2(BoardWidth, Clearance, EndPinWidth, InteriorPinWidth);
+            testPoints = new Breakpoints(BoardWidth, Clearance, EndPinWidth, InteriorPinWidth);
 
-            Assert.AreEqual(0, test.breakpoints[0]);
-            double testVal = (EndPinWidth + (0.25 * Clearance));
-            Assert.AreEqual(testVal, test.breakpoints[1]);
-            for (int i = 1; i <= test.NumInteriorAreas; i++)
+            Assert.AreEqual(0, testPoints[0]);
+            double testVal = (EndPinWidth + (0.5 * Clearance));
+            Assert.AreEqual(testVal, testPoints[1]);
+            for (int i = 1; i <= testPoints.NumInteriorAreas; i++)
             {
-                testVal += test.InteriorPinWidth;
-                Assert.AreEqual(testVal, test.breakpoints[i + 1]);
+                testVal += testPoints.InteriorPinWidth;
+                Assert.AreEqual(testVal, testPoints[i + 1]);
             }
-            Assert.AreEqual(4, test.breakpoints[5]);
+            Assert.AreEqual(4, testPoints[5]);
 
         }
 
@@ -60,17 +60,17 @@ namespace FingerJointAlgorithmTesting
             double BoardWidth = 4;
             double Clearance = ((double)1 / 64);
             double InteriorPinWidth = 1;
-            test = new Case3(BoardWidth, Clearance, InteriorPinWidth);
+            testPoints = new Breakpoints(BoardWidth, Clearance, InteriorPinWidth);
 
-            Assert.AreEqual(0, test.breakpoints[0]);
-            double testVal = (test.EndPinWidth + (0.25 * Clearance));
-            Assert.AreEqual(testVal, test.breakpoints[1]);
-            for (int i = 1; i <= test.NumInteriorAreas; i++)
+            Assert.AreEqual(0, testPoints[0]);
+            double testVal = (testPoints.EndPinWidth + (0.5 * Clearance));
+            Assert.AreEqual(testVal, testPoints[1]);
+            for (int i = 1; i <= testPoints.NumInteriorAreas; i++)
             {
-                testVal += test.InteriorPinWidth;
-                Assert.AreEqual(testVal, test.breakpoints[i + 1]);
+                testVal += testPoints.InteriorPinWidth;
+                Assert.AreEqual(testVal, testPoints[i + 1]);
             }
-            Assert.AreEqual(4, test.breakpoints[5]);
+            Assert.AreEqual(4, testPoints[5]);
 
         }
 
@@ -81,11 +81,11 @@ namespace FingerJointAlgorithmTesting
             double Clearance = ((double)1 / 64);
             double EndPinWidth = 0.5;
             int NumInteriorPins = 1;
-            test = new Case1(BoardWidth, Clearance, EndPinWidth, NumInteriorPins);
-            double[] pinBoard = test.generatePinBoard();
-            double[] socketBoard = test.generateSocketBoard();
+            testPoints = new Breakpoints(BoardWidth, Clearance, EndPinWidth, NumInteriorPins);
+            double[] pinBoard = testPoints.generatePinBoard();
+            double[] socketBoard = testPoints.generateSocketBoard();
 
-            int numItems = test.breakpoints.Length;
+            int numItems = testPoints.Count;
 
             Assert.AreEqual(pinBoard[0], socketBoard[0]);
 
@@ -93,7 +93,7 @@ namespace FingerJointAlgorithmTesting
             for(int i = 2; i < numItems - 2; i++)
             {
                 difference = Math.Abs(pinBoard[i] - socketBoard[i]);
-                Assert.AreEqual(Clearance / 2, difference);
+                Assert.AreEqual(Clearance, difference);
             }
 
             Assert.AreEqual(pinBoard[numItems - 1], socketBoard[numItems - 1]);

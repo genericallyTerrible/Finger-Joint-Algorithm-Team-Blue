@@ -7,3 +7,12 @@ D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\obj\Debug\FingerJoi
 D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.exe
 D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.pdb
 D:\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.Form1.resources
+D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithm\bin\Debug\FingerJointAlgorithm.exe.config
+D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.exe
+D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.pdb
+D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithm\bin\Debug\FingerJointAlgorithm.exe
+D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithm\bin\Debug\FingerJointAlgorithm.pdb
+D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.csprojResolveAssemblyReference.cache
+D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.Form1.resources
+D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.Properties.Resources.resources
+D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithm\obj\Debug\FingerJointAlgorithm.csproj.GenerateResource.Cache

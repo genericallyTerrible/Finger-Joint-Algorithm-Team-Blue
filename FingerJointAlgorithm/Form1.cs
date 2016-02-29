@@ -16,18 +16,39 @@ namespace FingerJointAlgorithm
         {
             InitializeComponent();
             double BoardWidth = 4;
+            double BoardHeight = 1;
+            double CutDepth = 2;
+            double EndMillDiameter = (double)1 / 4;
             double Clearance = ((double)1 / 64);
             double EndPinWidth = 0.5;
-            double InteriorPinWidth = 1;
             int NumInteriorPins = 1;
-            FindingBreakpoints test1 = new Case1(BoardWidth, Clearance, EndPinWidth, NumInteriorPins);
-            FindingBreakpoints test2 = new Case2(BoardWidth, Clearance, EndPinWidth, InteriorPinWidth);
-            FindingBreakpoints test3 = new Case3(BoardWidth, Clearance, InteriorPinWidth);
-            Console.WriteLine(test1);
-            Console.WriteLine(test2);
-            Console.WriteLine(test3);
-            Console.WriteLine(string.Join(", ", test1.generatePinBoard()));
-            Console.WriteLine(string.Join(", ", test1.generateSocketBoard()));
+
+            
+            
+            
+            Breakpoints breakPointsTest = new Breakpoints(BoardWidth, Clearance, EndPinWidth, NumInteriorPins);
+            Console.WriteLine();
+            Console.WriteLine("Pin Board Break Points:");
+            Console.WriteLine("[" + string.Join(", ", breakPointsTest.generatePinBoard()) + "]");
+            Console.WriteLine("Socket Board Break Points:");
+            Console.WriteLine("[" + string.Join(", ", breakPointsTest.generateSocketBoard()) + "]");
+
+            Board boardTest = new Board(BoardHeight, BoardWidth, EndMillDiameter, CutDepth, Clearance);
+            CutArea[] pinBoardTest = boardTest.generatePinBoard(EndPinWidth, NumInteriorPins);
+            CutArea[] socketBoardTest = boardTest.generateSocketBoard(EndPinWidth, NumInteriorPins);
+
+            Console.WriteLine();
+            Console.WriteLine("Pinboard areas to be cut:");
+            foreach (CutArea cutArea in pinBoardTest)
+            {
+                Console.WriteLine(cutArea.ToString());
+            }
+            
+            Console.WriteLine("Socketboard areas to be cut:");
+            foreach (CutArea cutArea in socketBoardTest)
+            {
+                Console.WriteLine(cutArea.ToString());
+            }
         }
     }
 }

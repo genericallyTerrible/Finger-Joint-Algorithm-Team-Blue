@@ -7,14 +7,20 @@ using System.Threading.Tasks;
 namespace FingerJointAlgorithm
 {
     //Assumes correct input
-    public abstract class FindingBreakpoints
+    public class Breakpoints
     {
-
-        public double[] breakpoints
+        public double this[int index]
         {
             get
             {
-                return _breakpoints.ToArray();
+                return _breakpoints[index];
+            }
+        }
+        public int Count
+        {
+            get
+            {
+                return _breakpoints.Count;
             }
         }
         public override string ToString()
@@ -34,7 +40,7 @@ namespace FingerJointAlgorithm
         {
             get
             {
-                return _clearance;
+                return _halfClearance;
             }
         }
         public double BoardWidth
@@ -75,18 +81,66 @@ namespace FingerJointAlgorithm
         #endregion
 
 
-        protected List<double> _breakpoints = null;
-        protected double _clearance;
-        protected double _boardWidth;
-        protected double _endPinWidth;
-        protected double _interiorBoardWidth;
-        protected double _interiorPinWidth;
-        protected int _numInteriorAreas;
+        private List<double> _breakpoints = null;
+        private double _halfClearance;
+        private double _boardWidth;
+        private double _endPinWidth;
+        private double _interiorBoardWidth;
+        private double _interiorPinWidth;
+        private int _numInteriorAreas;
 
-        protected void generateBreakpoints(){
+        //Case 1
+        public Breakpoints(double BoardWidth, double Clearance, double EndPinWidth, int NumInteriorPins)
+        {
+            _halfClearance = Clearance / 2;
+            _boardWidth = BoardWidth;
+            _endPinWidth = EndPinWidth;
+            _numInteriorAreas = (NumInteriorPins * 2) + 1;
+            //Find width of interior pins
+            _interiorBoardWidth = _boardWidth - ((2 * _endPinWidth) + Clearance);
+            _interiorPinWidth = _interiorBoardWidth / _numInteriorAreas;
+            generateBreakpoints();
+        }
+
+        //Case 2
+        public Breakpoints(double BoardWidth, double Clearance, double EndPinWidth, double InteriorPinWidth)
+        {
+            _halfClearance = Clearance / 2;
+            _boardWidth = BoardWidth;
+            _endPinWidth = EndPinWidth;
+            _interiorPinWidth = InteriorPinWidth;
+            //Find number of interior pins
+            _interiorBoardWidth = _boardWidth - ((2 * _endPinWidth) + Clearance);
+            _numInteriorAreas = (int)Math.Round(_interiorBoardWidth / _interiorPinWidth);
+            //Recalculate Interior pin size to adjust for clearance
+            _interiorPinWidth = _interiorBoardWidth / _numInteriorAreas;
+            generateBreakpoints();
+        }
+
+        //Case 3
+        public Breakpoints(double BoardWidth, double Clearance, double InteriorPinWidth)
+        {
+            _halfClearance = Clearance / 2;
+            _boardWidth = BoardWidth;
+            _interiorPinWidth = InteriorPinWidth;
+            int pinsAndSockets = (int)(_boardWidth / _interiorPinWidth);
+            _interiorBoardWidth = pinsAndSockets * _interiorPinWidth;
+            if (pinsAndSockets % 2 != 0 || _interiorBoardWidth == _boardWidth)
+            {
+                //Number of pins and sockets are odd or whole board is taken up from interior pins/sockets
+                pinsAndSockets--;
+                _interiorBoardWidth = pinsAndSockets * _interiorPinWidth;
+            }
+            _numInteriorAreas = (int)(_interiorBoardWidth / _interiorPinWidth);
+            _endPinWidth = (_boardWidth - _interiorBoardWidth) / 2;
+            _interiorPinWidth -= Clearance / _numInteriorAreas; //Adjustment from ideal
+            generateBreakpoints();
+        }
+
+        private void generateBreakpoints(){
             _breakpoints = new List<double>();
             int _numBreakPoints = (_numInteriorAreas / 2) + 1;
-            double offset = _endPinWidth + (_clearance);
+            double offset = _endPinWidth + (_halfClearance);
             _breakpoints.Add(0);
             _breakpoints.Add(offset);   
             for (int i = 0; i <= _numBreakPoints; i++)
@@ -108,12 +162,12 @@ namespace FingerJointAlgorithm
                 if (i % 2 == 0)
                 {
                     // is even
-                    newBreakPoints[i] = _breakpoints[i] + (_clearance / 2);
+                    newBreakPoints[i] = _breakpoints[i] + (_halfClearance);
                 }
                 else
                 {
                     // is odd
-                    newBreakPoints[i] = _breakpoints[i] - (_clearance / 2);
+                    newBreakPoints[i] = _breakpoints[i] - (_halfClearance);
                 }
             }
             newBreakPoints[numItems - 1] = _breakpoints[numItems - 1]; //last spot fixed - end of board
@@ -131,12 +185,12 @@ namespace FingerJointAlgorithm
                 if (i % 2 == 0)
                 {
                     // is even
-                    newBreakPoints[i] = _breakpoints[i] - (_clearance / 2);
+                    newBreakPoints[i] = _breakpoints[i] - (_halfClearance);
                 }
                 else
                 {
                     // is odd
-                    newBreakPoints[i] = _breakpoints[i] + (_clearance / 2);
+                    newBreakPoints[i] = _breakpoints[i] + (_halfClearance);
                 }
             }
             newBreakPoints[numItems - 1] = _breakpoints[numItems - 1]; //Last spot fixed - end of board and
@@ -144,60 +198,5 @@ namespace FingerJointAlgorithm
         }
 
     }
-
-    public class Case1 : FindingBreakpoints
-    {
-        public Case1(double boardWidth, double clearance, double endPinWidth, int numInteriorPins)
-        {
-            _clearance = clearance;
-            _boardWidth = boardWidth;
-            _endPinWidth = endPinWidth;
-            _numInteriorAreas = (numInteriorPins * 2) + 1;
-            //Find width of interior pins
-            _interiorBoardWidth = _boardWidth - ((2 * _endPinWidth) + (_clearance / 2));
-            _interiorPinWidth = _interiorBoardWidth / _numInteriorAreas;
-            generateBreakpoints();
-        }
-    }
-
-    public class Case2 : FindingBreakpoints
-    {
-        //Assumes interiorBoardWidth is evenly divisible
-        public Case2(double boardWidth, double clearance, double endPinWidth, double interiorPinWidth)
-        {
-            _clearance = clearance;
-            _boardWidth = boardWidth;
-            _endPinWidth = endPinWidth;
-            _interiorPinWidth = interiorPinWidth;
-            //Find number of interior pins
-            _interiorBoardWidth = _boardWidth - ((2 * _endPinWidth) + (_clearance / 2));
-            _numInteriorAreas = (int)Math.Round(_interiorBoardWidth / _interiorPinWidth);
-            //Recalculate Interior pin size to adjust for clearance
-            _interiorPinWidth = _interiorBoardWidth / _numInteriorAreas;
-            generateBreakpoints();
-        }
-    }
-
-    public class Case3 : FindingBreakpoints
-    {
-        //Case 3: User provides only Width of Interior Pins
-        public Case3(double boardWidth, double clearance, double interiorPinWidth)
-        {
-            _clearance = clearance;
-            _boardWidth = boardWidth;
-            _interiorPinWidth = interiorPinWidth;
-            int pinsAndSockets = (int)(_boardWidth / _interiorPinWidth);
-            _interiorBoardWidth = pinsAndSockets * _interiorPinWidth;
-            if (pinsAndSockets % 2 != 0 || _interiorBoardWidth == _boardWidth)
-            {
-                //Number of pins and sockets are odd or whole board is taken up from interior pins/sockets
-                pinsAndSockets--;
-                _interiorBoardWidth = pinsAndSockets * _interiorPinWidth;
-            }
-            _numInteriorAreas = (int)(_interiorBoardWidth / _interiorPinWidth);
-            _endPinWidth = (_boardWidth - _interiorBoardWidth) / 2;
-            _interiorPinWidth -= (_clearance / 2) / _numInteriorAreas; //Adjustment from ideal
-            generateBreakpoints();
-        }
-    }
+    
 }
