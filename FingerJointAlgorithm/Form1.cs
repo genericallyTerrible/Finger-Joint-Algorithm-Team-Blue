@@ -21,7 +21,7 @@ namespace FingerJointAlgorithm
             double EndMillDiameter = (double)1 / 8;
             double Clearance = ((double)1 / 32);
             double EndPinWidth = 1;
-            int NumInteriorPins = 3;
+            int NumInteriorPins = 5;
 
             
             

@@ -10,6 +10,7 @@ namespace FingerJointAlgorithmTesting
         [TestMethod]
         public void PinBoardTest()
         {
+            #region Inputs
             double BoardWidth = 4;
             double BoardHeight = 1;
             double CutDepth = 2;
@@ -17,7 +18,9 @@ namespace FingerJointAlgorithmTesting
             double Clearance = (double)1 / 64;
             double EndPinWidth = 0.5;
             int NumInteriorPins = 1;
+            #endregion
 
+            #region Assignment
             Breakpoints testPoints = new Breakpoints(BoardWidth, Clearance, EndPinWidth, NumInteriorPins);
             double[] testPinPoints = testPoints.generatePinBoard();
 
@@ -25,7 +28,10 @@ namespace FingerJointAlgorithmTesting
             CutArea[] testAreas =  testBoard.generatePinBoard(EndPinWidth, NumInteriorPins);
 
             int x = 0;
-            for(int i = 1; i < testPinPoints.Length - 1;)
+            #endregion
+
+            #region Testing
+            for (int i = 1; i < testPinPoints.Length - 1;)
             {
                 Assert.AreEqual(testPinPoints[i++], testAreas[x].xStart);
                 Assert.AreEqual(testPinPoints[i++], testAreas[x].xStop);
@@ -33,12 +39,13 @@ namespace FingerJointAlgorithmTesting
                 Assert.AreEqual((BoardWidth + (0.5 * EndMillDiameter)), testAreas[x].yStop);
                 Assert.AreEqual(CutDepth, testAreas[x++].CutDepth);
             }
-            
+            #endregion
         }
 
         [TestMethod]
         public void SocketBoardTest()
         {
+            #region Inputs
             double BoardWidth = 4;
             double BoardHeight = 1;
             double CutDepth = 2;
@@ -46,7 +53,9 @@ namespace FingerJointAlgorithmTesting
             double Clearance = (double)1 / 64;
             double EndPinWidth = 0.5;
             int NumInteriorPins = 1;
+            #endregion
 
+            #region Assignment
             Breakpoints testPoints = new Breakpoints(BoardWidth, Clearance, EndPinWidth, NumInteriorPins);
             double[] testSocketPoints = testPoints.generateSocketBoard();
 
@@ -54,6 +63,9 @@ namespace FingerJointAlgorithmTesting
             CutArea[] testAreas = testBoard.generateSocketBoard(EndPinWidth, NumInteriorPins);
 
             int x = 0;
+            #endregion
+
+            #region Testing
             for (int i = 0; i < testSocketPoints.Length - 1;)
             {
                 Assert.AreEqual(testSocketPoints[i++], testAreas[x].xStart);
@@ -62,7 +74,7 @@ namespace FingerJointAlgorithmTesting
                 Assert.AreEqual((BoardWidth + (0.5 * EndMillDiameter)), testAreas[x].yStop);
                 Assert.AreEqual(CutDepth, testAreas[x++].CutDepth);
             }
-
+            #endregion
         }
     }
 }
