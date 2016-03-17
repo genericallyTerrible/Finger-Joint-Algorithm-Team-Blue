@@ -14,7 +14,7 @@ namespace FingerJointAlgorithmTesting
         {
             //Case1(BoardWidth, Clearance, EndPinWidth, NumInteriorPins)
 
-            double BoardWidth = 4;
+            double BoardWidth = 7;
             double Clearance = ((double)1 / 64);
             double EndPinWidth = 0.5;
             int NumInteriorPins = 1;
@@ -28,7 +28,7 @@ namespace FingerJointAlgorithmTesting
                 testVal += testPoints.InteriorPinWidth;
                 Assert.AreEqual(testVal, testPoints[i + 1]);
             }
-            Assert.AreEqual(4, testPoints[5]);
+            Assert.AreEqual(7, testPoints[5]);
         }
 
         [TestMethod]
@@ -77,7 +77,7 @@ namespace FingerJointAlgorithmTesting
         [TestMethod]
         public void BreakpointTestClearance()
         {
-            double BoardWidth = 4;
+            double BoardWidth = 7;
             double Clearance = ((double)1 / 64);
             double EndPinWidth = 0.5;
             int NumInteriorPins = 1;

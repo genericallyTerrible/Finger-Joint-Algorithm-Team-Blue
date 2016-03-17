@@ -36,6 +36,13 @@ namespace FingerJointAlgorithm
             return output.ToString();
         }
         #region Accessors for Testing
+        public List<double> IdealBreakpoints
+        {
+            get
+            {
+                return _breakpoints;
+            }
+        }
         public double Clearance
         {
             get
@@ -81,7 +88,7 @@ namespace FingerJointAlgorithm
         #endregion
 
 
-        private List<double> _breakpoints = null;
+        private List<double> _breakpoints;
         private double _halfClearance;
         private double _boardWidth;
         private double _endPinWidth;
@@ -139,11 +146,10 @@ namespace FingerJointAlgorithm
 
         private void generateBreakpoints(){
             _breakpoints = new List<double>();
-            int _numBreakPoints = (_numInteriorAreas / 2) + 1;
             double offset = _endPinWidth + (_halfClearance);
             _breakpoints.Add(0);
             _breakpoints.Add(offset);   
-            for (int i = 0; i <= _numBreakPoints; i++)
+            for (int i = 0; i < _numInteriorAreas; i++)
             {
                 offset += _interiorPinWidth;
                 _breakpoints.Add(offset);

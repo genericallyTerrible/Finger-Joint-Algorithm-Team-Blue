@@ -12,3 +12,10 @@ D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Al
 D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithmTesting\obj\Debug\FingerJointAlgorithmTesting.csprojResolveAssemblyReference.cache
 D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithmTesting\obj\Debug\FingerJointAlgorithmTesting.dll
 D:\Users\jmoeh\Downloads\Finger-Joint-Algorithm-Team-Blue-master\Finger-Joint-Algorithm-Team-Blue-master\FingerJointAlgorithmTesting\obj\Debug\FingerJointAlgorithmTesting.pdb
+D:\Users\jmoeh\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\bin\Debug\FingerJointAlgorithmTesting.dll
+D:\Users\jmoeh\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\bin\Debug\FingerJointAlgorithmTesting.pdb
+D:\Users\jmoeh\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\bin\Debug\FingerJointAlgorithm.exe
+D:\Users\jmoeh\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\bin\Debug\FingerJointAlgorithm.pdb
+D:\Users\jmoeh\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\obj\Debug\FingerJointAlgorithmTesting.csprojResolveAssemblyReference.cache
+D:\Users\jmoeh\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\obj\Debug\FingerJointAlgorithmTesting.dll
+D:\Users\jmoeh\Git\Finger-Joint-Algorithm-Team-Blue\FingerJointAlgorithmTesting\obj\Debug\FingerJointAlgorithmTesting.pdb
